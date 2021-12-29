@@ -1,3 +1,5 @@
+# invest-calc
+
 What is the safe withdrawal rate (SWR)? 
 
 Assuming you have E equity invested in S&P 500 index fund when
