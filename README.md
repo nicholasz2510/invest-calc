@@ -42,12 +42,19 @@ at the end of year n is
 &emsp;&emsp;&emsp;&emsp;- ...  
 &emsp;&emsp;&emsp;&emsp;- W (1+i<sub>1</sub>) ... (1+i<sub>n</sub>)&emsp;]  
 
-
 Safe withdrawal rate is the initial withdrawal rate to use such that at the
 end of year n, the remaining equity runs out (i.e. e<sub>n</sub> = 0). Since
 the next year's expenses are already covered at this time, the initial equity
 E actually lasted n+1 years. (note: the safe withdrawal rate does not really
 depend on the initial equity amount E.)
+
+&emsp;SWR = (1+r<sub>1</sub>) ... (1+r<sub>n</sub>) /  
+&emsp;&emsp;&emsp;&emsp;[&emsp;&emsp;(1+r<sub>1</sub>) ... (1+r<sub>n</sub>)  
+&emsp;&emsp;&emsp;&emsp;&emsp;+ (1+i<sub>1</sub>) (1+r<sub>2</sub>) ... (1+r<sub>n</sub>)  
+&emsp;&emsp;&emsp;&emsp;&emsp;+ ...  
+&emsp;&emsp;&emsp;&emsp;&emsp;+ (1+i<sub>1</sub>) ... (1+i<sub>m</sub>) (1+r<sub>m+1</sub>) ... (1+r<sub>n</sub>)  
+&emsp;&emsp;&emsp;&emsp;&emsp;+ ...  
+&emsp;&emsp;&emsp;&emsp;&emsp;+ (1+i<sub>1</sub>) ... (1+i<sub>n</sub>)&emsp;]  
 
 References
 

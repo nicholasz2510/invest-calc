@@ -1,21 +1,35 @@
 import csv
 import matplotlib.pyplot as plt
 
-annual_yield = []
+annual_return = []
 annual_inflation = []
+
+with open('annual_return.csv', 'r') as annual_return_file:
+    reader = csv.reader(annual_return_file)
+    annual_return = list(reader)
+annual_return_year_begin = int(annual_return[0][0])
+annual_return = [float(num) for num in annual_return[1]]
+
 with open('annual_inflation.csv', 'r') as annual_inflation_file:
     reader = csv.reader(annual_inflation_file)
-    for row in reader:
-        annual_inflation = [float(num) for num in row]
-with open('annual_yield.csv', 'r') as annual_yield_file:
-    reader = csv.reader(annual_yield_file)
-    for row in reader:
-        annual_yield = [float(num) for num in row]
+    annual_inflation = list(reader)
+annual_inflation_year_begin = int(annual_inflation[0][0])
+annual_inflation = [float(num) for num in annual_inflation[1]]
 
+annual_return = annual_return[1930-annual_return_year_begin:]
+annual_return_year_begin = 1930
+annual_inflation = annual_inflation[1930-annual_inflation_year_begin:]
+annual_inflation_year_begin = 1930
+
+print(annual_return_year_begin)
+print(annual_return)
+print(annual_inflation_year_begin)
+print(annual_inflation)
+
+# print(annual_return)
 # print(annual_inflation)
-# print(annual_yield)
+# annual_return = annual_return[1990 - 1930:]
 # annual_inflation = annual_inflation[1990 - 1930:]
-# annual_yield = annual_yield[1990 - 1930:]
 
 
 def remaining_investment(investment, expense, years):
@@ -23,7 +37,7 @@ def remaining_investment(investment, expense, years):
     curr_expense = expense
     for year in range(years):
         curr_invest -= curr_expense
-        curr_invest *= 1 + annual_yield[year]
+        curr_invest *= 1 + annual_return[year]
         curr_expense *= 1 + annual_inflation[year]
     return curr_invest
 
@@ -59,7 +73,7 @@ for year in range(1930, 1980):
     withdrawal_ratios.append(withdrawal_ratio)
 
     annual_inflation = annual_inflation[1:]
-    annual_yield = annual_yield[1:]
+    annual_return = annual_return[1:]
 
 print("\nAverage initial withdrawal ratio = " + str(sum(withdrawal_ratios) / len(withdrawal_ratios)))
 fig, ax = plt.subplots()
