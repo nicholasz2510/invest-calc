@@ -2,8 +2,8 @@
 
 What is the safe withdrawal rate (SWR)? 
 
-Assuming you have E equity invested in S&P 500 index fund and W withdrawal
-rate when you start your retirement at year 0:  
+Assuming you have E equity invested in the S&P 500 index fund and a withdrawal
+rate of W when you start your retirement at year 0:  
 To cover next year's expenses, you withdraw  
 &emsp;E W  
 The remaining equity at the end of year 0 is  
@@ -25,7 +25,7 @@ year 2 is
 &emsp;e<sub>2</sub> = e<sub>1</sub> (1+r<sub>2</sub>) - E W (1+i<sub>1</sub>) (1+i<sub>2</sub>)  
 And so on.
 
-In general after withdrawal for next year's expenses, the remaining equity
+In general, after withdrawal for next year's expenses, the remaining equity
 at the end of year n is  
 &emsp;e<sub>n</sub> = e<sub>n-1</sub> (1+r<sub>n</sub>) - E W (1+i<sub>1</sub>) ... (1+i<sub>n</sub>)  
 &emsp;&emsp;= e<sub>0</sub> (1+r<sub>1</sub>) ... (1+r<sub>n</sub>)  
@@ -35,11 +35,11 @@ at the end of year n is
 &emsp;&emsp;- ...  
 &emsp;&emsp;- E W (1+i<sub>1</sub>) ... (1+i<sub>n</sub>)
 
-Safe withdrawal rate is the withdrawal rate that at the end of year n, the
-remaining equity runs out, i.e, e<sub>n</sub> = 0. Since the next year's
-expenses are already covered at this time, the initial equitiy E actually
-lasted n+1 years. Note that the safe withdrawal rate does not really depend
-on the initial equity amount E.
+Safe withdrawal rate is the initial withdrawal rate to use such that at the end of year n, the
+remaining equity runs out (i.e. e<sub>n</sub> = 0). Since the next year's
+expenses are already covered at this time, the initial equity E actually
+lasted n+1 years. (note: the safe withdrawal rate does not really depend
+on the initial equity amount E.)
 
 References
 
