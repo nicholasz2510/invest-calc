@@ -28,9 +28,21 @@ And so on.
 In general after withdrawal for next year's expenses, the remaining equity
 at the end of year n is  
 &emsp;e<sub>n</sub> = e<sub>n-1</sub> (1+r<sub>n</sub>) - E W (1+i<sub>1</sub>) ... (1+i<sub>n</sub>)  
+&emsp;&emsp;= e<sub>0</sub> (1+r<sub>1</sub>) ... (1+r<sub>n</sub>)  
+&emsp;&emsp;- E W (1+i<sub>1</sub>) (1+r<sub>2</sub>) ... (1+r<sub>n</sub>)  
+&emsp;&emsp;- ...  
+&emsp;&emsp;- E W (1+i<sub>1</sub>) ... (1+i<sub>m</sub>) (1+r<sub>m+1</sub>) ... (1+r<sub>n</sub>)  
+&emsp;&emsp;- ...  
+&emsp;&emsp;- E W (1+i<sub>1</sub>) ... (1+i<sub>n</sub>)
+
+Safe withdrawal rate is the withdrawal rate that at the end of year n, the
+remaining equity runs out, i.e, e<sub>n</sub> = 0. Since the next year's
+expenses are already covered at this time, the initial equitiy E actually
+lasted n+1 years. Note that the safe withdrawal rate does not really depend
+on the initial equity amount E.
 
 References
 
-[1] <https://en.wikipedia.org/wiki/Trinity_study> "Trinity study"
-[2] <https://www.macrotrends.net/2526/sp-500-historical-annual-returns> "S&P 500 Annual Returns"
-[3] <https://www.minneapolisfed.org/about-us/monetary-policy/inflation-calculator/consumer-price-index-1913-> "Annual Consumer Price Index"
+1. [Trinity study](https://en.wikipedia.org/wiki/Trinity_study)
+2. [S&P 500 Annual Returns](https://www.macrotrends.net/2526/sp-500-historical-annual-returns)
+3. [Annual Consumer Price Index](https://www.minneapolisfed.org/about-us/monetary-policy/inflation-calculator/consumer-price-index-1913-)
