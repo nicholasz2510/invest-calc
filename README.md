@@ -56,6 +56,15 @@ depend on the initial equity amount E.)
 &emsp;&emsp;&emsp;&emsp;&emsp;+ ...  
 &emsp;&emsp;&emsp;&emsp;&emsp;+ (1+i<sub>1</sub>) ... (1+i<sub>n</sub>)&emsp;]  
 
+SWR depends on how many years (i.e. n+1) the equity needs to last. It also
+depends on the market performance (i.e. r<sub>m</sub>) and inflation (i.e.
+i<sub>m</sub>) in those years after the retirement, hence, which year the
+retirement starts. Typically, the equity expected to last 30 years after
+retirement. Using historical data, the following figure shows the SWR for
+each starting year.
+
+![SWR over the years](swr.png)
+
 References
 
 1. [Trinity study](https://en.wikipedia.org/wiki/Trinity_study)

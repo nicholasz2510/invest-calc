@@ -43,5 +43,14 @@ def swr(year_1, year_n):
         w += p[m]
     return p[0] / w
 
-for year in range(1930, 1991+1):
-    print(str(year) + " | " + "%.2f%%" % (swr(year, year+30-1)*100))
+print("Year    Return    Inflation    SWR")
+years = 30-1
+for year in range(1928, 2021-years+1):
+    print(str(year) + "    %6.2f    %6.2f    %6.2f" \
+            % ((annual_return[1][year-annual_return[0][0]]*100), \
+               (annual_inflation[1][year-annual_inflation[0][0]]*100), \
+               (swr(year, year+years-1)*100)))
+for year in range(2021-years+1, 2021+1):
+    print(str(year) + "    %6.2f    %6.2f" \
+            % ((annual_return[1][year-annual_return[0][0]]*100),\
+               (annual_inflation[1][year-annual_inflation[0][0]]*100)))
