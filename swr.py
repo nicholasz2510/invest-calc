@@ -43,14 +43,46 @@ def swr(year_1, year_n):
         w += p[m]
     return p[0] / w
 
-print("Year    Return    Inflation    SWR")
-years = 30-1
-for year in range(1928, 2021-years+1):
-    print(str(year) + "    %6.2f    %6.2f    %6.2f" \
-            % ((annual_return[1][year-annual_return[0][0]]*100), \
-               (annual_inflation[1][year-annual_inflation[0][0]]*100), \
-               (swr(year, year+years-1)*100)))
-for year in range(2021-years+1, 2021+1):
-    print(str(year) + "    %6.2f    %6.2f" \
-            % ((annual_return[1][year-annual_return[0][0]]*100),\
-               (annual_inflation[1][year-annual_inflation[0][0]]*100)))
+def remaining_equity(initial_equitiy, inital_withdrawal_rate, year_1, year_n):
+    p = prod(annual_return_inflation(year_1, year_n))
+    e = 0;
+    for m in range(0, len(p)):
+        e += p[m]
+    return initial_equity * (p[0] - initial_withdrawal_rate * e)
+
+def remaining_equity_n(initial_equitiy, inital_withdrawal_rate, year_1, year_n):
+    r_i = annual_return_inflation(year_1, year_n)
+    e = initial_equity - initial_equity * initial_withdrawal_rate
+    for m in range(0, year_n-year_1+1):
+        p = 1
+        for k in range(0, m+1):
+            p *= 1+r_i[1][k]
+        e = e * (1+r_i[0][m]) \
+            - initial_equity * initial_withdrawal_rate * p
+        print(str(year_1+m) + "    %11.2f" % e)
+    return e
+
+def print_swr(years):
+    n = years - 1
+
+    print("Year    Return    Inflation    SWR")
+    for year in range(1928, 2021-n+1):
+        print(str(year) + "    %6.2f    %6.2f    %6.2f" \
+                % ((annual_return[1][year-annual_return[0][0]]*100), \
+                   (annual_inflation[1][year-annual_inflation[0][0]]*100), \
+                   (swr(year, year+n-1)*100)))
+    for year in range(2021-n+1, 2021+1):
+        print(str(year) + "    %6.2f    %6.2f" \
+                % ((annual_return[1][year-annual_return[0][0]]*100),\
+                   (annual_inflation[1][year-annual_inflation[0][0]]*100)))
+
+initial_equity = 1000000
+initial_withdrawal_rate = 0.04
+year_1 = 1970
+year_n = 1999
+#print("Remaining equity")
+#for m in range(year_1, year_n+1):
+#    print(str(m) + "    %11.2f" % remaining_equity(initial_equity, initial_withdrawal_rate, year_1, m))
+#remaining_equity_n(initial_equity, initial_withdrawal_rate, year_1, year_n)
+
+print_swr(30)
