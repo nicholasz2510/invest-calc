@@ -65,6 +65,39 @@ each starting year.
 
 ![SWR over the years](swr.png)
 
+The inverse of SWR, let's call it safe equity withdrawal ratio (SEWR),
+can be written like
+&emsp;SEWR = 1 / SWR
+&emsp;&emsp;= 1  
+&emsp;&emsp;&emsp;&emsp;&emsp;+ (1+i<sub>1</sub>) / (1+r<sub>1</sub>)   
+&emsp;&emsp;&emsp;&emsp;&emsp;+ ...  
+&emsp;&emsp;&emsp;&emsp;&emsp;+ [(1+i<sub>1</sub>) ... (1+i<sub>m</sub>)]  / [(1+r<sub>1</sub>) ... (1+r<sub>m</sub>)]  
+&emsp;&emsp;&emsp;&emsp;&emsp;+ ...  
+&emsp;&emsp;&emsp;&emsp;&emsp;+ [(1+i<sub>1</sub>) ... (1+i<sub>n</sub>)]  / [(1+r<sub>1</sub>) ... (1+r<sub>n</sub>)]  
+&emsp;&emsp;= 1  
+&emsp;&emsp;&emsp;&emsp;&emsp;+ ci<sub>1</sub> / cr<sub>1</sub>  
+&emsp;&emsp;&emsp;&emsp;&emsp;+ ...  
+&emsp;&emsp;&emsp;&emsp;&emsp;+ ci<sub>m</sub> / cr<sub>m</sub>  
+&emsp;&emsp;&emsp;&emsp;&emsp;+ ...  
+&emsp;&emsp;&emsp;&emsp;&emsp;+ ci<sub>n</sub> / cr<sub>n</sub>  
+
+Above, ci<sub>m</sub> is the compound inflation from year 1 to year m.
+Similarly, cr<sub>m</sub> is the compound return from year 1 to year m.
+
+Specifically, if there is no change in inflation and return, or if the
+inflation is identical to return every year, the safe equity withdrawal
+ratio is
+&emsp;SEWR<sub>static</sub> = 1 + n
+For 30-year withdrawal, SEWR<sub>static</sub> is 30. This can serve as a
+better indicator than the 4% rule (Initial equity should be 25 times the
+initial withdrawal).
+
+Only if you are optimistic and believe the compound inflations are always
+lower than compound returns, the safe equity withdrawal ratio can be slightly
+lower than SEWR<sub>static</sub>. If you are pessimistic, the safe
+equity withdrawal ratio needs to be higher than SEWR<sub>static</sub>.
+
+
 References
 
 1. [Trinity study](https://en.wikipedia.org/wiki/Trinity_study)

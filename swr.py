@@ -36,6 +36,14 @@ def prod(r_i):
             p[m] *= 1+r_i[0][k]
     return p
 
+def compound(r_i):
+    n = len(r_i[0])
+    c = [1] * (2)
+    for m in range(0, n):
+        c[0] *= 1+r_i[0][m]
+        c[1] *= 1+r_i[1][m]
+    return c
+
 def swr(year_1, year_n):
     p = prod(annual_return_inflation(year_1, year_n))
     w = 0
@@ -67,9 +75,11 @@ def print_swr(years):
 
     print("Year    Return    Inflation    SWR")
     for year in range(1928, 2021-n+1):
-        print(str(year) + "    %6.2f    %6.2f    %6.2f" \
+        c = compound(annual_return_inflation(year, year+10-1))
+        print(str(year) + "    %6.2f    %6.2f    %6.2f    %6.2f    %6.2f    %6.2f" \
                 % ((annual_return[1][year-annual_return[0][0]]*100), \
                    (annual_inflation[1][year-annual_inflation[0][0]]*100), \
+                   c[0], c[1], c[0]/c[1], \
                    (swr(year, year+n-1)*100)))
     for year in range(2021-n+1, 2021+1):
         print(str(year) + "    %6.2f    %6.2f" \
