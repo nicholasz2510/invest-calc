@@ -86,6 +86,12 @@ def print_swr(years):
                 % ((annual_return[1][year-annual_return[0][0]]*100),\
                    (annual_inflation[1][year-annual_inflation[0][0]]*100)))
 
+def print_cirr(years):
+    print("Year      CIRR")
+    for year in range(1928, 2021-years):
+        c = compound(annual_return_inflation(year, year+years-1))
+        print(str(year) + "    %6.2f" % (c[1]/c[0]))
+
 initial_equity = 1000000
 initial_withdrawal_rate = 0.04
 year_1 = 1970
@@ -95,4 +101,5 @@ year_n = 1999
 #    print(str(m) + "    %11.2f" % remaining_equity(initial_equity, initial_withdrawal_rate, year_1, m))
 #remaining_equity_n(initial_equity, initial_withdrawal_rate, year_1, year_n)
 
-print_swr(30)
+#print_swr(30)
+print_cirr(10)

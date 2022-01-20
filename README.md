@@ -65,8 +65,8 @@ each starting year.
 
 ![SWR over the years](swr.png)
 
-The inverse of SWR, let's call it safe equity withdrawal ratio (SEWR),
-can be written like  
+The inverse of SWR, let's call it safe equity/withdrawal ratio (SEWR),
+can be written as  
 &emsp;SEWR = 1 / SWR  
 &emsp;&emsp;&emsp;&emsp;= 1  
 &emsp;&emsp;&emsp;&emsp;&emsp;+ (1+i<sub>1</sub>) / (1+r<sub>1</sub>)   
@@ -85,17 +85,35 @@ Above, ci<sub>m</sub> is the compound inflation from year 1 to year m.
 Similarly, cr<sub>m</sub> is the compound return from year 1 to year m.
 
 Specifically, if there is no change in inflation and return, or if the
-inflation is identical to return every year, the safe equity withdrawal
+inflation is identical to return every year, the safe equity/withdrawal
 ratio is  
 &emsp;SEWR<sub>static</sub> = 1 + n  
 For 30-year withdrawal, SEWR<sub>static</sub> is 30. This can serve as a
 better indicator than the 4% rule (Initial equity should be 25 times the
 initial withdrawal).
 
+Define compound inflation/return ratio (CIRR) from year 1 to year m as
+&emsp;CIRR<sub>m</sub> =  ci<sub>m</sub> / cr<sub>m</sub>  
+then
+&emsp;SEWR = 1 + CIRR<sub>1</sub> + ... + CIRR<sub>n</sub>  
+For a good year, CIRR<sub>m</sub> < 1, the compound inflation is less
+than the compound return which makes SEWR less; for a bad year,
+CIRR<sub>m</sub> > 1, the compound inflation is greater than the compound
+return which make SWER higher, i.e. more initial equity to start with.
+
+CIRR is a very good indicator of how much initial equity is needed down
+the road. There are quite a few bad years aheard depending on the year
+to retire. For example the 10-year CIRR over the last 80 years or so:
+
+![10-year CIRR over the years](cirr.png)
+
+If retired in 1969, in the following ten year, the compound inflation
+was more than twice of the return. The 4% rule was definitely not working.
+
 Only if you are optimistic and believe the compound inflations are always
-lower than compound returns, the safe equity withdrawal ratio can be slightly
+lower than compound returns, the safe equity/withdrawal ratio can be slightly
 lower than SEWR<sub>static</sub>. If you are pessimistic, the safe
-equity withdrawal ratio needs to be higher than SEWR<sub>static</sub>.
+equity/withdrawal ratio needs to be higher than SEWR<sub>static</sub>.
 
 
 References
